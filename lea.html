@@ -6,14 +6,52 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mon Portfolio - Léa</title>
 <link rel="stylesheet" href="style.css">
+<style>
+/* Change la couleur de ton titre principal en orange */
+header h1 {
+    color: #ff6600;
+    font-family: 'Bradley Hand', cursive;
+    font-size: 3em;
+}
+
+/* Background */
+body {
+    background: linear-gradient(to bottom, hsl(54, 98%, 52%), hsl(61, 81%, 44%));
+}
+
+
+/* Headings and text */
+h2 {
+    color: #97b806;
+    font-family: 'Bradley Hand', cursive;
+    font-size: 2.75em;
+}
+p {
+    font-family: 'Bradley Hand', cursive;
+    font-size: 1.5em;
+    color: #7c3c11;
+}
+h3 {
+    color: #e26c1d;
+    font-family: 'Bradley Hand', cursive;
+    font-size: 2em;
+}
+ul {
+    font-family: 'Bradley Hand', cursive;
+    font-size: 1.5em;
+    color: #c22700;
+}
+</style>
 </head>
 <body>
 <header>
-<h1> Bienvenue sur le site de Léa !</h1>
+<h1>Bienvenue sur le site de Léa !</h1>
 <p><a href="index.html">← Retour à l'accueil</a></p>
+<p><a href="joanne.html">← Direction la page de Joanne !</a></p>
 </header>
 <main>
----- Ta présentation -->
+<!-- Styles moved to head -->
+<!-- Ta présentation -->
 <section>
 <h2>À propos de moi</h2>
 <p> Bonjour ! Je m'appelle Léa, et ceci est mon web portfolio (et celui de Joanne mais c'est pas sur cette page)</p>
@@ -27,6 +65,9 @@
 </ul>
 <h3>Mes projets</h3>
 <p>en attente ?</p>
+<button id="mon-bouton-like" class="btn">
+❤ 
+ J'aime (0)</button>
 </section>
 </main>
 <footer>
