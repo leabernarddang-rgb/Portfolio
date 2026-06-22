@@ -1,40 +1,243 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mon Portfolio - Joanne</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header>
-<h1> Bienvenue sur le site de Joanne !</h1>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon stage de seconde - Epitech</title>
 
-</header>
-<main>
-<section>
-<h2> À propos de moi :</h2>
-<p> Salut moi c'est joanne et voici mon Portfolio </p>
-</section>
-</main>
-<footer>
-</footer>
+  <style>
+    /* Réglages de base */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      line-height: 1.6;
+      /* Fond en dégradé de plusieurs couleurs */
+      background: linear-gradient(to bottom right, #6a11cb, #2575fc, #ff6ec4, #00d2ff);
+      background-attachment: fixed;
+    }
+
+    /* Le scroll est doux quand on clique sur une flèche */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Bouton avec les trois traits */
+    .menu-bouton {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 1000;
+      background-color: rgba(0, 0, 0, 0.4);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    /* Le menu sur le côté */
+    .menu-cote {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 200px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding-top: 70px;
+      z-index: 999;
+      display: none; /* caché au départ, on l'ouvre avec le bouton */
+    }
+    .menu-cote a {
+      display: block; /* chaque lien sur sa propre ligne */
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 15px 20px;
+    }
+    .menu-cote a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Chaque partie prend tout l'écran */
+    .partie {
+      min-height: 100vh;
+      box-sizing: border-box;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 45px;
+    }
+
+    /* Mon prénom en couleur brillante */
+    .nom {
+      color: #ff6ec4;
+      text-shadow: 0 0 20px #ff6ec4;
+    }
+
+    h2 {
+      font-size: 35px;
+    }
+
+    /* Les cartes blanches transparentes */
+    .carte {
+      background-color: rgba(255, 255, 255, 0.15);
+      border: 1px solid white;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+
+    /* La liste de ce que j'ai appris */
+    .liste {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 18px;
+    }
+    .liste li {
+      margin-bottom: 12px;
+    }
+
+    /* Le bouton rond avec la flèche */
+    .fleche {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      margin-top: 40px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 1px solid white;
+      border-radius: 50%;
+      color: white;
+      font-size: 22px;
+      text-decoration: none;
+    }
+    .fleche:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Bouton avec les trois traits -->
+  <button class="menu-bouton" onclick="ouvrirMenu()">&#9776;</button>
+
+  <!-- Menu sur le côté (les parties les unes sous les autres) -->
+  <div class="menu-cote" id="menu">
+    <a href="index.html">Accueil</a>
+    <a href="lea.html"> Page de Léa</a>
+    <a href="#presentation" onclick="fermerMenu()">Présentation</a>
+    <a href="#stage" onclick="fermerMenu()">Mon stage</a>
+    <a href="#appris" onclick="fermerMenu()">Programme</a>
+    <a href="#journal" onclick="fermerMenu()">Ce que j'ai appris</a>
+    <a href="#bilan" onclick="fermerMenu()">Bilan</a>
+  </div>
+
+  <!-- Page d'accueil -->
+  <div class="partie" id="presentation">
+    <h1>Salut, moi c'est <span class="nom">Joanne</span> &#128075;</h1>
+    <p>Bienvenue sur mon portfolio !<br>Mon stage de seconde à Epitech.</p>
+    <a href="#stage" class="fleche">&#8595;</a>
+  </div>
+
+  / Mon stage /
+  <div class="partie" id="stage">
+    <h2>Mon stage de seconde</h2>
+    <div class="carte">
+      <p>
+        J'ai fait mon stage de seconde pendant 2 semaines
+        à l'école Epitech de Lille. L'école de l'excellence informatique. 
+      </p>
+    </div>
+    <a href="#appris" class="fleche">&#8595;</a>
+  </div>
+
+  / Ce que j'ai appris /
+  <div class="partie" id="appris">
+    <h2>Ce que j'ai appris</h2>
+    <div class="carte">
+   --   <ul class="liste">
+        <!-- Ajoute ou enlève des lignes ici -->
+        <li>J'ai découvert comment on écrit du code et les différents types (Html, CSS, Javascript...).</li>
+        <li>J'ai appris à créer des algorithmes pour différentes fonctions (Programmer un jeu de lumières ou encore un crayon pour dessiner).</li>
+        <li>J'ai vu que les projets se font souvent en équipe.</li>
+        <li>J'ai découvert l'ambiance d'une école d'informatique.</li>
+      </ul>
+    </div>
+    <a href="#journal" class="fleche">&#8595;</a>
+  </div>
+
+  <!-- Journal -->
+  <div class="partie" id="journal">
+    <h2>Mon journal de stage</h2>
+    <div class="carte">
+      <h3>Semaine 1</h3>
+      <p>Écris ici ce que tu as fait pendant la première semaine.</p>
+    </div>
+    <div class="carte">
+      <h3>Semaine 2</h3>
+      <p>Écris ici ce que tu as fait pendant la deuxième semaine.</p>
+    </div>
+    <a href="#bilan" class="fleche">&#8595;</a>
+  </div>
+
+  <!-- Bilan -->
+  <div class="partie" id="bilan">
+    <h2>Mon bilan</h2>
+    <div class="carte">
+      <p>Donne ton avis sur le stage ici : ce qui t'a plu, ce qui t'a surpris...</p>
+    </div>
+    <a href="#presentation" class="fleche">&#8593;</a>
+  </div>
+
+  <footer>
+    <p>Portfolio de Joanne - Stage de seconde a Epitech</p>
+  </footer>
+
+  <!-- Le JavaScript -->
+  <script>
+    // Ouvrir le menu sur le côté (afficher)
+    function ouvrirMenu() {
+      var menu = document.getElementById("menu");
+      // si le menu est ouvert on le ferme, sinon on l'ouvre
+      if (menu.style.display === "block") {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "block";
+      }
+    }
+
+    // Fermer le menu quand on clique sur un lien
+    function fermerMenu() {
+      document.getElementById("menu").style.display = "none";
+    }
+
+    // Texte qui s'écrit lettre par lettre (trouvé sur Google)
+    var texte = "Bienvenue sur mon portfolio !\nMon stage de seconde a Epitech.";
+    var i = 0;
+
+    function ecrire() {
+      if (i < texte.length) {
+        document.getElementById("ecriture").textContent += texte.charAt(i);
+        i = i + 1;
+        setTimeout(ecrire, 70); // attend 70 ms avant la lettre suivante
+      }
+    }
+
+    ecrire();
+  </script>
+
 </body>
 </html>
-<p><a href="index.html">← Retour à la page d'accueil</a></p>
-<p><a href="lea.html">← Retour à la page de Léa</a></p>
-
-<style>/* Change la couleur de ton titre principal en turquoise*/
-header h1 {
-color: #E2E8F0A; 
-}/* Change la couleur ddu fond de ta page en beige*/
-body {
-background-color: #0F172A
-}
-
-
-
-
-<button id="mon-bouton-like" class="btn">
-❤ 
-</button>
