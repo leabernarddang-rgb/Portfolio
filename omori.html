@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OMORI - White Space</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#000;
+color:white;
+font-family:'Press Start 2P', cursive;
+overflow-x:hidden;
+}
+
+/* ===================== */
+/* FOND */
+/* ===================== */
+
+.background{
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at center,
+rgba(255,255,255,.05),
+rgba(0,0,0,1));
+z-index:-4;
+}
+
+.stars{
+position:fixed;
+inset:0;
+z-index:-3;
+overflow:hidden;
+}
+
+.star{
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+border-radius:50%;
+animation:floatStar linear infinite;
+}
+
+@keyframes floatStar{
+from{
+transform:translateY(110vh);
+}
+to{
+transform:translateY(-10vh);
+}
+}
+
+.noise{
+position:fixed;
+inset:0;
+background-image:
+radial-gradient(rgba(255,255,255,.08) 1px, transparent 1px);
+background-size:4px 4px;
+opacity:.04;
+z-index:-2;
+pointer-events:none;
+}
+
+/* ===================== */
+/* HERO */
+/* ===================== */
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px;
+}
+
+/* Ampoule */
+
+.bulb-wire{
+width:2px;
+height:160px;
+background:white;
+}
+
+.bulb{
+width:70px;
+height:70px;
+border:3px solid white;
+border-radius:50%;
+position:relative;
+animation:swing 4s ease-in-out infinite;
+box-shadow:
+0 0 20px rgba(255,255,255,.3),
+0 0 60px rgba(255,255,255,.1);
+}
+
+.bulb::after{
+content:'';
+position:absolute;
+width:24px;
+height:20px;
+border:3px solid white;
+border-top:none;
+bottom:-20px;
+left:50%;
+transform:translateX(-50%);
+}
+
+@keyframes swing{
+0%,100%{
+transform:rotate(-3deg);
+}
+50%{
+transform:rotate(3deg);
+}
+}
+
+.hero h1{
+margin-top:60px;
+font-size:clamp(2rem,8vw,5rem);
+letter-spacing:8px;
+}
+
+.subtitle{
+margin-top:30px;
+max-width:700px;
+line-height:2;
+color:#cfcfcf;
+}
+
+/* ===================== */
+/* NAV */
+/* ===================== */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:center;
+gap:25px;
+padding:20px;
+background:rgba(0,0,0,.5);
+backdrop-filter:blur(10px);
+z-index:100;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:.65rem;
+transition:.3s;
+}
+
+nav a:hover{
+color:#d4d4d4;
+}
+
+/* ===================== */
+/* SECTION */
+/* ===================== */
+
+section{
+padding:120px 10%;
+}
+
+.title{
+font-size:1.2rem;
+margin-bottom:40px;
+border-left:5px solid white;
+padding-left:15px;
+}
+
+.box{
+padding:30px;
+border:2px solid white;
+background:rgba(255,255,255,.03);
+line-height:2;
+}
+
+/* ===================== */
+/* PERSONNAGES */
+/* ===================== */
+
+.characters{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.card{
+padding:30px;
+border:2px solid rgba(255,255,255,.2);
+background:#050505;
+transition:.4s;
+text-align:center;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.avatar{
+width:80px;
+height:80px;
+border-radius:50%;
+margin:auto auto 20px;
+}
+
+.omori{
+background:white;
+}
+
+.sunny{
+background:#60a5fa;
+}
+
+.basil{
+background:#4ade80;
+}
+
+.aubrey{
+background:#f472b6;
+}
+
+.card h3{
+margin-bottom:15px;
+}
+
+.card p{
+font-size:.65rem;
+line-height:1.8;
+color:#d1d5db;
+}
+
+/* ===================== */
+/* WHITE SPACE */
+/* ===================== */
+
+.whitespace{
+text-align:center;
+line-height:2;
+}
+
+.whitespace ul{
+margin-top:30px;
+list-style:none;
+}
+
+.whitespace li{
+margin:15px 0;
+color:#cfcfcf;
+}
+
+/* ===================== */
+/* CITATION */
+/* ===================== */
+
+.quote{
+padding:120px 20px;
+text-align:center;
+line-height:2;
+font-size:1rem;
+color:#ddd;
+animation:flicker 6s infinite;
+}
+
+@keyframes flicker{
+0%,100%{
+opacity:1;
+}
+50%{
+opacity:.4;
+}
+}
+
+/* ===================== */
+/* FOOTER */
+/* ===================== */
+
+footer{
+padding:50px;
+text-align:center;
+color:#777;
+border-top:1px solid rgba(255,255,255,.1);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+nav{
+flex-wrap:wrap;
+gap:12px;
+}
+
+.title{
+font-size:1rem;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="background"></div>
+<div class="stars"></div>
+<div class="noise"></div>
+
+<nav>
+<a href="#story">Histoire</a>
+<a href="#characters">Personnages</a>
+<a href="#white-space">White Space</a>
+</nav>
+
+<header class="hero">
+
+<div class="bulb-wire"></div>
+<div class="bulb"></div>
+
+<h1>OMORI</h1>
+
+<p class="subtitle">
+Welcome to WHITE SPACE.<br>
+You've been living here for as long as you can remember.
+</p>
+
+</header>
+
+<section id="story">
+
+<h2 class="title">L'HISTOIRE</h2>
+
+<div class="box">
+OMORI est un RPG psychologique où les frontières entre rêve
+et réalité deviennent de plus en plus floues.
+
+À travers Headspace, White Space et le monde réel,
+Sunny devra affronter son passé et découvrir une vérité
+qu'il a longtemps cherché à oublier.
+</div>
+
+</section>
+
+<section id="characters">
+
+<h2 class="title">PERSONNAGES</h2>
+
+<div class="characters">
+
+<div class="card">
+<div class="avatar omori"></div>
+<h3>OMORI</h3>
+<p>Le gardien silencieux de White Space.</p>
+</div>
+
+<div class="card">
+<div class="avatar sunny"></div>
+<h3>SUNNY</h3>
+<p>Le protagoniste du monde réel.</p>
+</div>
+
+<div class="card">
+<div class="avatar basil"></div>
+<h3>BASIL</h3>
+<p>Le gardien des souvenirs et des photographies.</p>
+</div>
+
+<div class="card">
+<div class="avatar aubrey"></div>
+<h3>AUBREY</h3>
+<p>Une amie passionnée au caractère bien trempé.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="white-space">
+
+<h2 class="title">WHITE SPACE</h2>
+
+<div class="box whitespace">
+
+<p>Une pièce vide.</p>
+
+<ul>
+<li>💡 Une ampoule suspendue.</li>
+<li>📓 Un carnet de croquis.</li>
+<li>💻 Un ordinateur portable.</li>
+<li>🚪 Une porte noire.</li>
+<li>⚪ Le silence.</li>
+</ul>
+
+</div>
+
+</section>
+
+<div class="quote">
+"Everything is going to be okay."
+</div>
+
+<footer>
+Fan Site OMORI
+</footer>
+
+<script>
+
+const stars = document.querySelector('.stars');
+
+for(let i=0;i<180;i++){
+
+const star = document.createElement('div');
+
+star.classList.add('star');
+
+const size = Math.random()*3 + 1;
+
+star.style.width = size + 'px';
+star.style.height = size + 'px';
+
+star.style.left = Math.random()*100 + '%';
+
+star.style.animationDuration =
+(10 + Math.random()*20) + 's';
+
+star.style.animationDelay =
+Math.random()*10 + 's';
+
+stars.appendChild(star);
+}
+
+</script>
+
+</body>
+</html>

@@ -8,6 +8,12 @@
 <link rel="stylesheet" href="style.css">
 <style>
 /* Change la couleur de ton titre principal en orange */
+#epic-image {
+    border-radius: 50%;
+    border: 5px solid #ff6600;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    image-rendering: pixelated;
+}
 header h1 {
     color: #ff6600;
     font-family: 'Bradley Hand', cursive;
@@ -16,7 +22,7 @@ header h1 {
 
 /* Background */
 body {
-    background: linear-gradient(to bottom, hsl(54, 98%, 52%), hsl(61, 81%, 44%));
+    background: linear-gradient(to bottom, hsl(54, 98%, 52%), hsl(41, 93%, 54%));
 }
 
 
@@ -41,6 +47,52 @@ ul {
     font-size: 1.5em;
     color: #c22700;
 }
+header h1 {
+    animation: rebond 1s linear infinite;
+}
+
+@keyframes rebond {
+    0% { transform: translateY(1px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(1px); }
+}
+#epic-image {
+    animation: rotate 20s linear infinite;
+}
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+
+}
+#celly-image {
+    animation: rotateFast 2s infinite;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+@keyframes rotateFast {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(25deg); }
+    100% { transform: rotate(0deg); }
+}
+h4 {
+    color: #43a2be;
+    font-family: 'Bradley Hand', cursive;
+    font-size: 1.75em;
+}
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+.image-row a img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
 </style>
 </head>
 <body>
@@ -53,6 +105,12 @@ ul {
 <!-- Styles moved to head -->
 <!-- Ta présentation -->
 <section>
+<img id="celly-image" src="celly_-removebg-preview.png"
+    alt="celly !"
+    width="300"
+    height="270"
+    
+>
 <h2>À propos de moi</h2>
 <p> Bonjour ! Je m'appelle Léa, et ceci est mon web portfolio (et celui de Joanne mais c'est pas sur cette page)</p>
 <h3>Mes passions</h3>
@@ -63,8 +121,23 @@ ul {
     <li>jouer aux jeux vidéo</li>
     <li>et d'autres choses mais j'ai pas d'idée...</li>
 </ul>
-<h3>Mes projets</h3>
-<p>en attente ?</p>
+
+<a href="epic.html">
+    <img id="epic-image" src="epic.jpg" alt="Clique pour une description de la comédie musicale 'Epic' !"
+    style="width: 200px; height: 200px;" 
+      object-fit: none; object-position: center top; 
+      
+    >
+</a>
+<h3>Durant le stage...</h3>
+<div class="image-row">
+    <a href="Conférences.html">
+        <img id="conférences-image" src="conférence.png" alt="Conférences de la première semaine" width="400" height="300">
+    </a>
+    <a href="Ateliers.html">
+        <img id="ateliers-image" src="ateliers.png" alt="Ateliers de la première semaine" width="300" height="200">
+    </a>
+</div>
 <button id="mon-bouton-like" class="btn">
 ❤ 
  J'aime (0)</button>
@@ -73,7 +146,18 @@ ul {
 <footer>
 <p>© 2026 - Léa | Fait avec passion</p>
 </footer>
-<script src="script.js"></script>
+<script src="script.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    let nbLikes = 0;
+    const boutonLike = document.getElementById('mon-bouton-like');
+    if (boutonLike) {
+        boutonLike.addEventListener('click', function() {
+            nbLikes += 1;
+            boutonLike.textContent = '❤ J\'aime (' + nbLikes + ')';
+        });
+    }
+});
+</script>
 </body>
 </html>
-<img src="https://www.google.com/imgres?q=plage&imgurl=https%3A%2F%2Fwww.dinardemeraudetourisme.com%2Fapp%2Fuploads%2F2024%2F07%2Fdinard21aalamoureux_d6a6356-683x1024.jpg&imgrefurl=https%3A%2F%2Fwww.dinardemeraudetourisme.com%2Fexperiences%2Fen-amoureux%2Fles-plages-incontournables%2F&docid=XECNI29F1SRqAM&tbnid=a8-vpMciF00VBM&vet=12ahUKEwjU16mhpYuVAxXURKQEHc8bIZwQnPAOegQIMxAA..i&w=683&h=1024&hcb=2&ved=2ahUKEwjU16mhpYuVAxXURKQEHc8bIZwQnPAOegQIMxAA.jpg" alt="Description">
