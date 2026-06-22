@@ -93,13 +93,33 @@ h4 {
     height: auto;
     border-radius: 12px;
 }
+.image {
+    display : flex;
+    justify-content: left;
+    gap : 20px;
+    flex-wrap : wrap;
+    margin: 40px 0;
+}
+.image a img {
+    display : block;
+    width : 50px;
+    height : auto;
+    border-radius : 12px;
+}
 </style>
 </head>
 <body>
 <header>
 <h1>Bienvenue sur le site de Léa !</h1>
-<p><a href="index.html">← Retour à l'accueil</a></p>
-<p><a href="joanne.html">← Direction la page de Joanne !</a></p>
+<div class = ".image">
+
+<a href="index.html"> 
+    <img id= "accueil-image" src = accueil1.png alt ="← Retour à l'accueil" style = "width: 50px; height: auto;">
+</a>
+<a href="joanne.html">
+    <img id="joanne-image" src = "joanne-removebg-preview.png" alt="page de joanne" style = "width : 50px; height: auto;">
+</a>
+</div>
 </header>
 <main>
 <!-- Styles moved to head -->

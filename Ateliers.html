@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les ateliers ! ^^ </title>
+<link rel="stylesheet" href="style.css">
+<style>
+header h1 {
+    color: #ff6600;
+    font-family: 'Bradley Hand', cursive;
+    font-size: 3em;
+}
+
+/* Background */
+body {
+    background: linear-gradient(to bottom, hsl(54, 98%, 52%), hsl(41, 93%, 54%));
+}
+
+
+/* Headings and text */
+h2 {
+    color: #97b806;
+    font-family: 'Bradley Hand', cursive;
+    font-size: 2.75em;
+}
+p {
+    font-family: 'Bradley Hand', cursive;
+    font-size: 1.5em;
+    color: #7c3c11;
+}
+h3 {
+    color: #e26c1d;
+    font-family: 'Bradley Hand', cursive;
+    font-size: 2em;
+}
+ul {
+    font-family: 'Bradley Hand', cursive;
+    font-size: 1.5em;
+    color: #c22700;
+}
+header h1 {
+    animation: rebond 1s linear infinite;
+}
+
+@keyframes rebond {
+    0% { transform: translateY(1px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(1px); }
+}
+
+h4 {
+    color: #43a2be;
+    font-family: 'Bradley Hand', cursive;
+    font-size: 1.75em;
+}
+#celly-image:hover {
+    animation: rotateFast 2s infinite;
+}
+@keyframes rotateFast {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(25deg); }
+    100% { transform: rotate(0deg); }
+}
+.grand-ecran {
+      display: none;            
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(208, 255, 0, 0.85);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+.grand-ecran img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 15px;
+      border: 5px solid rgb(255, 137, 58);
+    }
+#Osint-site {
+    border-radius : 10%;
+    width: 250px;
+    height: auto;
+    border: 5px solid #ff6600;
+}
+</style>
+</head>
+<body>
+<header>
+<h1>Les ateliers réalisés ! ^^</h1>
+<a href="lea.html">
+    <img id = "celly-image" src = "celly_-removebg-preview.png" alt = "retour à ma page" style = "width : 100px; height : auto;">
+</a>
+</header>
+<main>
+<section>
+<h2>1ère semaine</h2>
+<ul>
+    <li>Ce site ofc</li>
+    <li>Défi OSINT et Geoguessr</li>
+<img src = "Osint.png" id = "Osint-site" style = "width : 250px; height : auto" alt="Osint"; onclick = "ouvrirPhoto(this)">
+    <li>Création d'un compte Leek War</li>
+    <li>Dessin de champignon en utilisant python</li>
+    <li>Atelier Canard</li>
+    <li>Tentative de réalisation du Jeu Simon en utilisant Arduino</li>   
+</ul>
+</section>
+</main>
+<footer>
+<p>© 2026 - Léa | Fait avec passion</p>
+</footer>
+<div id="grandEcran" class="grand-ecran" onclick="fermerPhoto()">
+  <img id="grandeImage" src="" alt="Image agrandie">
+</div>
+<script src="script.js">
+</script>
+<script>
+    function ouvrirPhoto(image) {
+      var grandEcran = document.getElementById("grandEcran");
+      var grandeImage = document.getElementById("grandeImage");
+      grandeImage.src = image.src;
+      grandEcran.style.display = "flex";
+    }
+    function fermerPhoto() {
+      document.getElementById("grandEcran").style.display = "none";
+    }
+</script>
+</body>
+</html>
