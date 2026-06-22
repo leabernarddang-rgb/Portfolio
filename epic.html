@@ -45,13 +45,22 @@ h3 {
     font-family: 'Bradley Hand', cursive;
     font-size: 2em;
 }
+    #celly-image:hover {
+    animation: rotateFast 2s infinite;
+}
+@keyframes rotateFast {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(25deg); }
+    100% { transform: rotate(0deg); }
+}
 </style>
 </head>
 <body>
 <header>
 <h1>Epic The Musical - Présentation</h1>
-<p><a href="lea.html">
- ← Ma page !</a></p>
+<a href="lea.html">
+    <img id = "celly-image"; src = "celly_-removebg-preview.png" alt = "retour à ma page" style = "width : 100px; height : auto;">
+</a>
 </header>
 <main>
 <section>
