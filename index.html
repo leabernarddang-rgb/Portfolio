@@ -69,7 +69,7 @@ header h1 .title-line2 {
   display: block;
   color: #65dbff;
 }
-#tomodachi-wrapper {
+#ac-wrapper {
   position: absolute;
   top: 37%;
   left: 75%;
@@ -78,10 +78,28 @@ header h1 .title-line2 {
   max-width: 80%;
   z-index: 2;
 }
-#tomodachi-wrapper img {
+#ac-wrapper img {
   width: 100%;
   height: auto;
   display: block;
+}
+#ac-text {
+  position: absolute;
+  bottom: 257px;
+  left: 34%;
+  font-family: 'Bradley Hand', cursive;
+  font-weight: bold;
+  transform: translateX(-50%);
+  color: rgb(236, 144, 23);
+  font-size: 1.4rem;
+  padding: 6px 10px;
+  border-radius: 10px;
+  animation : rebond1 0.75s linear infinite;
+}
+@keyframes rebond1 {
+    0% { transform: translate(-50%, calc(-50% + 1px)); }
+    50% { transform: translate(-50%, calc(-50% - 1.5px)); }
+    100% { transform: translate(-50%, calc(-50% + 1px)); }
 }
 #Porcella {
   position: absolute;
@@ -98,8 +116,9 @@ header h1 .title-line2 {
 <a href="lea.html">
   <img id="celly" src="celly_image-removebg-preview.-fotor-enhance-20260625194639-removebg-preview.png" alt="retour à ma page"> 
    </a>
-<div id="tomodachi-wrapper">
-  <img id="tomodachi-life" src="tomodachi life.png" alt="tomodachi life">
+<div id="ac-wrapper">
+  <img id="ac-life" src="tomodachi life.png" alt="tomodachi life">
+  <div id="ac-text">C'est ma page ! ^^ </div>
 </div>
 <p><a href="joanne.html">← Retour à la page de Joanne</a></p>
 <img id="celly-image" src="celly_-removebg-preview.png"
@@ -111,8 +130,6 @@ header h1 .title-line2 {
 <main>
 
 <section>
-<h2>À propos de nous</h2>
-<p> Bonjour, voici notre Portfolio</p>
 </section>
 </main>
 <footer>
