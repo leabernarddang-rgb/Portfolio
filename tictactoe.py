@@ -100,6 +100,7 @@ def get_random_move():
     ### A REMPLIR : retourner un coup au hasard parmi les cases vides ###
     pass
 
+
 # === ETAPE 4 : Minimax ===
 def minimax(board, depth, is_maximizing):
     ### A REMPLIR : algorithme minimax ###

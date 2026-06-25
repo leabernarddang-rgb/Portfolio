@@ -4,21 +4,119 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mon Portfolio - [Nous]</title>
-<link rel="stylesheet" href="style.css">
+<style>
+body{
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
+  background: 
+    linear-gradient(
+      to right,
+      rgb(64, 169, 255) 0%,
+      rgb(64, 169, 255) 50%,
+      transparent 50%
+    ),
+    url('télécharger (4).jpg') right center / 50% 100% no-repeat;
+}
+#celly {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  max-width: 80%;
+  height: auto;
+  animation: rebound 2s linear infinite;
+}
+@keyframes rebound {
+    0% { transform: translate(-50%, calc(-50% + 1.5px)); }
+    50% { transform: translate(-50%, calc(-50% - 5px)); }
+    100% { transform: translate(-50%, calc(-50% + 1.5px)); }
+}
+#celly:hover {
+    animation: rebond 0.80s linear infinite;
+}
+
+@keyframes rebond {
+    0% { transform: translate(-50%, calc(-50% + 3px)); }
+    50% { transform: translate(-50%, calc(-50% - 5px)); }
+    100% { transform: translate(-50%, calc(-50% + 3px)); }
+}
+#celly-image {
+    animation: rotateFast 2s infinite;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+@keyframes rotateFast {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(25deg); }
+    100% { transform: rotate(0deg); }
+}
+header h1 {
+  text-align: center;
+  font-family: 'Bradley Hand', cursive;
+  font-size: 4em;
+  margin: 40px 0 0;
+  line-height: 1.1;
+}
+header h1 .title-line1 {
+  display: block;
+  color: #ff6600;
+}
+header h1 .title-line2 {
+  display: block;
+  color: #65dbff;
+}
+#tomodachi-wrapper {
+  position: absolute;
+  top: 37%;
+  left: 75%;
+  transform: translate(-50%, 0);
+  width: 500px;
+  max-width: 80%;
+  z-index: 2;
+}
+#tomodachi-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+#Porcella {
+  position: absolute;
+  bottom: -20px;
+  right: -60px;
+  width: 250px;
+  height: auto;
+}
+</style>
 </head>
 <body>
 <header>
-<h1> Bienvenue sur le site de Joanne et Léa!</h1>
-<p><a href="lea.html">← Retour à la page de Léa</a></p>
+<h1><span class="title-line1">Bienvenue sur le site</span><span class="title-line2">de Joanne et Léa!</span></h1>
+<a href="lea.html">
+  <img id="celly" src="celly_image-removebg-preview.-fotor-enhance-20260625194639-removebg-preview.png" alt="retour à ma page"> 
+   </a>
+<div id="tomodachi-wrapper">
+  <img id="tomodachi-life" src="tomodachi life.png" alt="tomodachi life">
+</div>
 <p><a href="joanne.html">← Retour à la page de Joanne</a></p>
+<img id="celly-image" src="celly_-removebg-preview.png"
+    alt="celly !"
+    width="250"
+    height= auto
+>
 </header>
 <main>
+
 <section>
 <h2>À propos de nous</h2>
 <p> Bonjour, voici notre Portfolio</p>
 </section>
 </main>
 <footer>
+<img id = "Porcella" src = "_-removebg-preview.png">
 <p>© 2026 - Joanne et Léa | Fait avec passion</p>
 </footer>
 <script src="script.js"></script>
