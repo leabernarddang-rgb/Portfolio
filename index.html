@@ -10,13 +10,8 @@ body{
   min-height: 100vh;
   margin: 0;
   position: relative;
-  background: 
-    linear-gradient(
-      to right,
-      rgb(64, 169, 255) 0%,
-      rgb(64, 169, 255) 50%,
-      transparent 50%
-    ),
+  background:
+    linear-gradient(to bottom, #001a66, #0066ff, #00cfff, #aef2ff) left center / 50% 100% no-repeat,
     url('télécharger (4).jpg') right center / 50% 100% no-repeat;
 }
 #celly {
@@ -108,6 +103,56 @@ header h1 .title-line2 {
   width: 250px;
   height: auto;
 }
+#bulle {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  width: 340px;
+  max-width: 40%;
+  padding: 30px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid white;
+  border-radius: 25px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  color: white;
+  font-family: 'Bradley Hand', cursive;
+  font-size: 1.4rem;
+  z-index: 3;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+#bulle:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%) scale(1.05);
+}
+.deco {
+  position: absolute;
+  z-index: 2;
+  user-select: none;
+  pointer-events: none;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.3));
+  animation: flotte 3s ease-in-out infinite;
+}
+@keyframes flotte {
+  0%   { transform: translateY(0) rotate(0deg); }
+  50%  { transform: translateY(-12px) rotate(8deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+.deco.d1  { top: 8%;  left: 4%;  font-size: 2.5rem; animation-delay: 0s; }
+.deco.d2  { top: 12%; left: 43%; font-size: 4rem;   animation-delay: 0.4s; }
+.deco.d3  { top: 32%; left: 16%; font-size: 3.2rem; animation-delay: 0.8s; }
+.deco.d4  { top: 40%; left: 38%; font-size: 1.8rem; animation-delay: 1.2s; }
+.deco.d5  { top: 48%; left: 1%;  font-size: 4.5rem; animation-delay: 0.6s; }
+.deco.d6  { top: 62%; left: 44%; font-size: 2.2rem; animation-delay: 1s; }
+.deco.d7  { top: 72%; left: 9%;  font-size: 3rem;   animation-delay: 0.2s; }
+.deco.d8  { top: 90%; left: 38%; font-size: 3.6rem; animation-delay: 1.4s; }
+.deco.d9  { top: 92%; left: 6%;  font-size: 2rem;   animation-delay: 0.9s; }
 </style>
 </head>
 <body>
@@ -116,11 +161,22 @@ header h1 .title-line2 {
 <a href="lea.html">
   <img id="celly" src="celly_image-removebg-preview.-fotor-enhance-20260625194639-removebg-preview.png" alt="retour à ma page"> 
    </a>
+<a id="bulle" href="joanne.html">
+  <p>Page de Joanne !</p>
+</a>
+<span class="deco d1">⚽</span>
+<span class="deco d2">🐴</span>
+<span class="deco d3">🏇</span>
+<span class="deco d4">✨</span>
+<span class="deco d5">🐎</span>
+<span class="deco d6">🥅</span>
+<span class="deco d7">🌟</span>
+<span class="deco d8">🎈</span>
+<span class="deco d9">🏆</span>
 <div id="ac-image">
   <img id="ac-life" src="tomodachi life.png" alt="tomodachi life">
   <div id="ac-text">C'est ma page ! ^^ </div>
 </div>
-<p><a href="joanne.html">← Retour à la page de Joanne</a></p>
 <img id="celly-image" src="celly_-removebg-preview.png"
     alt="celly !"
     width="250"
@@ -128,13 +184,11 @@ header h1 .title-line2 {
 >
 </header>
 <main>
-
 <section>
 </section>
 </main>
 <footer>
 <img id = "Porcella" src = "_-removebg-preview.png">
-<p>© 2026 - Joanne et Léa | Fait avec passion</p>
 </footer>
 <script src="script.js"></script>
 </body>
