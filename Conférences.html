@@ -15,7 +15,25 @@ header h1 {
 body {
     background: linear-gradient(to bottom, hsl(54, 98%, 52%), hsl(41, 93%, 54%));
 }
-
+.grand-ecran {
+      display: none;            
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(208, 255, 0, 0.85);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+.grand-ecran img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 15px;
+      border: 5px solid rgb(255, 137, 58);
+    }
 
 /* Headings and text */
 h2 {
@@ -67,9 +85,39 @@ h4 {
     height : 160px;
     border : 5px solid #ff6600;
 }
+#google {
+     border-radius : 10%;
+    width : 250px;
+    height : 160px;
+    border : 5px solid #ff6600;
+}
+#stormshield {
+     border-radius : 10%;
+    width : 250px;
+    height : 160px;
+    border : 5px solid #ff6600;
+}
+#cyber {
+     border-radius : 10%;
+    width : 250px;
+    height : 160px;
+    border : 5px solid #ff6600;
+}
+#transformation-ia {
+     border-radius : 10%;
+    width : 250px;
+    height : 160px;
+    border : 5px solid #ff6600;
+}
 </style>
 </head>
 <body>
+<embed src= "Thunder Bringer.mp3"
+             loop="true" 
+             autostart="true" 
+             width="0" 
+             height="0">
+<section>
 <header>
 <h1>Les conférences ! ^^</h1>
 <a href="lea.html">
@@ -81,27 +129,48 @@ h4 {
 <h2>1ère semaine</h2>
 <ul>
     <li>Cybersécurité</li>
+<img id = "cyber" src = "IMG_0917.jpg" onclick = "ouvrirPhoto(this)">
     <li>Transformation de l'IA</li>
+<img id = "transformation-ia" src = "IMG_0989.jpg" onclick = "ouvrirPhoto(this)">
     <li>L'IA en distanciel (création d'un site complètement avec l'IA)</li>
 <a href="omori.html">
     <img id="IA-omori" src = "IA omori.png" alt = "retour à ma page" style = "width : 250px; height : 160px;">
+
 </a>
+    <li>Apprendre à apprendre</li>
+<img id = "apprendre" src = "IMG_1020.jpg" onclick = "ouvrirPhoto(this)">
 </ul>
 <h2>2e semaine</h2>
 <ul>
     <li>Témoignage étudiants</li>
     <li>Conférence sur les métiers AD2N-KDF</li>
     <li>Conférence IA google</li> 
+<img id = "google" src = "DSC00042.jpg" onclick = "ouvrirPhoto(this)">
     <li>Conférence sur les métiers du jeu vidéo</li>  
     <li>Conférence métiers de la cyber avec Stormshield</li>
+<img id = "stormshield" src = "DSC00070.jpg" onclick = "ouvrirPhoto(this)">
     <li>Orientation</li>
 </ul>
 </section>
 </main>
+<div id="grandEcran" class="grand-ecran" onclick="fermerPhoto()">
+  <img id="grandeImage" src="" alt="Image agrandie">
+</div>
 <footer>
 <p>© 2026 - Léa | Fait avec passion</p>
 </footer>
 <script src="script.js">
+</script>
+<script>
+    function ouvrirPhoto(image) {
+      var grandEcran = document.getElementById("grandEcran");
+      var grandeImage = document.getElementById("grandeImage");
+      grandeImage.src = image.src;
+      grandEcran.style.display = "flex";
+    }
+    function fermerPhoto() {
+      document.getElementById("grandEcran").style.display = "none";
+    }
 </script>
 </body>
 </html>
