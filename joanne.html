@@ -173,6 +173,27 @@
       border: 3px solid white;
     }
 
+    .programme-galerie {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin: 30px auto;
+    }
+    .programme-galerie img {
+      width: 50%;
+      max-height: 85vh;
+      height: auto;
+      object-fit: contain;
+      border-radius: 15px;
+      border: 2px solid white;
+      cursor: pointer;
+    }
+    .programme-galerie img.pivote {
+      transform: rotate(0deg);
+    }
+
     footer {
       text-align: center;
       padding: 30px;
@@ -193,6 +214,7 @@
     <a href="index.html">Accueil</a>
     <a href="lea.html">Page de Léa</a>
     <a href="#presentation" onclick="fermerMenu()">Présentation</a>
+    <a href="#programme" onclick="fermerMenu()">Programme</a>
     <a href="#stage" onclick="fermerMenu()">Mon stage</a>
     <a href="#appris" onclick="fermerMenu()">Ce que j'ai appris</a>
     <a href="#journal" onclick="fermerMenu()">Conférences</a>
@@ -202,6 +224,15 @@
   <div class="partie" id="presentation">
     <h1>Salut, moi c'est <span class="nom">Joanne</span> &#128075;</h1>
     <p>Bienvenue sur mon portfolio !<br>Je vais vous présenter mon stage.</p>
+    <a href="#programme" class="fleche">&#8595;</a>
+  </div>
+
+  <div class="partie" id="programme">
+    <h2>Le programme</h2>
+    <div class="programme-galerie">
+      <img src="Emploi du tempsS1.jpg" alt="Programme semaine 1" class="pivote" onclick="ouvrirPhoto(this)">
+      <img src="emploi du tempsS2.jpg" alt="Programme semaine 2" onclick="ouvrirPhoto(this)">
+    </div>
     <a href="#stage" class="fleche">&#8595;</a>
   </div>
 
